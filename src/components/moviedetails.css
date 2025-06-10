@@ -1,0 +1,7 @@
+.backshadow {
+  background: linear-gradient(to bottom, var(--color-gradient-start), var(--color-gradient-end));
+}
+
+.content{
+    background-color: var(--color-bg);
+}
