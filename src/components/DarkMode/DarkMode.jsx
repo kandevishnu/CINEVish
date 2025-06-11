@@ -4,21 +4,15 @@ import Moon from './Moon.svg?react';
 import "./DarkMode.css";
 
 const DarkMode = () => {
-    const [theme, setTheme] = useState('dark'); // Default to dark
-    const [mounted, setMounted] = useState(false); // Prevent mismatch on first render
+    const [theme, setTheme] = useState(null); // null initially
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('selectedTheme');
+        const currentTheme = savedTheme || 'dark'; // Default to dark
 
-        if (savedTheme === 'light') {
-            setTheme('light');
-            document.body.setAttribute('data-theme', 'light');
-        } else {
-            // Default to dark
-            setTheme('dark');
-            document.body.setAttribute('data-theme', 'dark');
-        }
-
+        setTheme(currentTheme);
+        document.body.setAttribute('data-theme', currentTheme);
         setMounted(true);
     }, []);
 
@@ -29,7 +23,8 @@ const DarkMode = () => {
         document.body.setAttribute('data-theme', newTheme);
     };
 
-    if (!mounted) return null; // Prevent mismatch during SSR/first render
+    // Prevent any flicker or mismatch
+    if (!mounted || theme === null) return null;
 
     return (
         <div className='dark_mode'>
@@ -38,7 +33,7 @@ const DarkMode = () => {
                 type='checkbox'
                 id='darkmode-toggle'
                 onChange={toggleTheme}
-                checked={theme === 'dark'} // Keep checkbox in sync
+                checked={theme === 'dark'}
             />
             <label className='dark_mode_label' htmlFor='darkmode-toggle'>
                 <Sun />
