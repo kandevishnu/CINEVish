@@ -4,14 +4,22 @@ import Moon from './Moon.svg?react';
 import "./DarkMode.css";
 
 const DarkMode = () => {
-    const [theme, setTheme] = useState('light');
-    const [isMounted, setIsMounted] = useState(false);
+    const [theme, setTheme] = useState('dark'); // Default to dark
+    const [mounted, setMounted] = useState(false); // Prevent mismatch on first render
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('selectedTheme') || 'light';
-        setTheme(savedTheme);
-        document.body.setAttribute('data-theme', savedTheme);
-        setIsMounted(true); // Ensure this runs after hydration
+        const savedTheme = localStorage.getItem('selectedTheme');
+
+        if (savedTheme === 'light') {
+            setTheme('light');
+            document.body.setAttribute('data-theme', 'light');
+        } else {
+            // Default to dark
+            setTheme('dark');
+            document.body.setAttribute('data-theme', 'dark');
+        }
+
+        setMounted(true);
     }, []);
 
     const toggleTheme = (e) => {
@@ -21,7 +29,7 @@ const DarkMode = () => {
         document.body.setAttribute('data-theme', newTheme);
     };
 
-    if (!isMounted) return null; // Avoid incorrect render on first load
+    if (!mounted) return null; // Prevent mismatch during SSR/first render
 
     return (
         <div className='dark_mode'>
@@ -30,7 +38,7 @@ const DarkMode = () => {
                 type='checkbox'
                 id='darkmode-toggle'
                 onChange={toggleTheme}
-                checked={theme === 'dark'}
+                checked={theme === 'dark'} // Keep checkbox in sync
             />
             <label className='dark_mode_label' htmlFor='darkmode-toggle'>
                 <Sun />
