@@ -13,7 +13,7 @@ const Footer = () => {
             >
                 <div className="mb-2">
                     <NavLink to="/" className="mx-2 nav-item">Home</NavLink>|
-                    <NavLink to="/favourites" className="mx-2 nav-item">Favourites</NavLink>|
+                    <NavLink to="/favorites" className="mx-2 nav-item">Favorites</NavLink>|
                     <NavLink to="/watchlater" className="mx-2 nav-item">WatchLater</NavLink>
                 </div>
 
