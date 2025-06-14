@@ -88,8 +88,8 @@ This ensures smooth functionality regardless of the user's ISP and helps maintai
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/movie-explorer.git
-cd movie-explorer
+git clone https://github.com/kandevishnu/CINEVish.git
+cd CINEVish
 ```
 
 ### 2. Install Dependencies
