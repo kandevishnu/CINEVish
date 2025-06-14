@@ -2,7 +2,7 @@ import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    value: [],
+    value: JSON.parse(localStorage.getItem('favorites')) || [],
 }
 export const FavoritesSlice = createSlice({
   name: 'favorites',

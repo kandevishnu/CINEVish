@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="navbar" style={{ backgroundColor: 'var(--color-header-footer)' }}>
       <div className='flex justify-between items-center p-3 px-5'>
-        {/* Logo and Branding */}
+        
         <div className='flex gap-1 items-center'>
           <NavLink to='/' className='text-lg link' onClick={closeMenu}>
             <div
@@ -32,7 +32,6 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* Desktop Navigation */}
         <div className='hidden md:flex items-center justify-center gap-4'>
           <DarkMode />
           <NavLink to='/' className={({ isActive }) =>

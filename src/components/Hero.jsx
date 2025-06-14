@@ -3,7 +3,7 @@ import { Search } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import './HeroSection.css';
 
-const API_KEY = 'e12c7b410930958ebb268917c3968cb4';
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 export default function HeroSection({ search, setSearch }) {
   const [suggestions, setSuggestions] = useState([]);

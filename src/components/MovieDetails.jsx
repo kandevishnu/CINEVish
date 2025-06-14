@@ -6,7 +6,6 @@ import {addWatchLater, removeWatchLater} from '../Store/WatchLaterSlice';
 import './moviedetails.css';
 import Footer from './Footer';
 
-const API_KEY = 'e12c7b410930958ebb268917c3968cb4';
 const IMAGE_BASE = 'https://image.tmdb.org/t/p/original';
 const IMAGE_SMALL = 'https://image.tmdb.org/t/p/w500';
 const PROFILE_IMAGE = 'https://image.tmdb.org/t/p/w185';
@@ -30,10 +29,12 @@ const MovieDetails = () => {
 
     const handleAddToFavorites = (movie) => {
         dispatch(add(movie));
+        localStorage.setItem('favorites', JSON.stringify([...movies, movie]));
     };
 
     const handleAddToWatchLater = (movie) => {
         dispatch(addWatchLater(movie));
+        localStorage.setItem('watchLater', JSON.stringify([...watchLaterMovies, movie]));
     };
 
     useEffect(() => {

@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import About from './components/About';
 import MovieDetails from './components/MovieDetails';
 import ShowMovies from './components/ShowMovies';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -17,7 +16,6 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
         <Route path='/movie/:id' element={<MovieDetails />} />
         <Route path='/movies/:movie' element={<ShowMovies />} />
         <Route path='/language/:lang' element={<ShowMovies />} />

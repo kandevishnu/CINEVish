@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { remove } from '../Store/FavoritesSlice'; 
+import { remove } from '../Store/FavoritesSlice';
 import Footer from './Footer';
 
 const IMAGE_SMALL = 'https://image.tmdb.org/t/p/w500';
@@ -67,7 +67,11 @@ const Favorites = () => {
                   </div>
 
                   <button
-                    onClick={() => dispatch(remove(movie.id))}
+                    onClick={() => {
+                      dispatch(remove(movie.id));
+                      const updated = favorites.filter((m) => m.id !== movie.id);
+                      localStorage.setItem('favorites', JSON.stringify(updated));
+                    }}
                     className="self-end sm:self-center px-4 py-2 rounded text-white transition shadow"
                     style={{
                       backgroundColor: 'red',

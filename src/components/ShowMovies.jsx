@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import './ShowMovies.css'; // Assuming you have some styles for ShowMovies
 
 const IMAGE_SMALL = 'https://image.tmdb.org/t/p/w500';
 

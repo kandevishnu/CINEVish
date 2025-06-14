@@ -66,7 +66,11 @@ const WatchLater = () => {
                   </div>
 
                   <button
-                    onClick={() => dispatch(removeWatchLater(movie.id))}
+                    onClick={() => {
+                      dispatch(remove(movie.id));
+                      const updated = watchlater.filter((m) => m.id !== movie.id);
+                      localStorage.setItem('watchLater', JSON.stringify(updated));
+                    }}
                     className="self-end sm:self-center px-4 py-2 rounded text-white transition shadow"
                     style={{ backgroundColor: 'red' }}
                   >

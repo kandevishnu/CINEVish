@@ -2,7 +2,7 @@ import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    value: [],
+    value: JSON.parse(localStorage.getItem('watchLater')) || [],
 }
 export const WatchLaterSlice = createSlice({
   name: 'WatchLater',
