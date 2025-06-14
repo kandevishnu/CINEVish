@@ -1,12 +1,126 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎬 CINEVish — React + TMDB API
 
-Currently, two official plugins are available:
+A fully responsive and theme-aware movie web app built with React, Redux, Tailwind CSS, and powered by TMDB API. Users can browse movies, view detailed information, manage favorites, and enjoy smooth infinite scrolling with a clean UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features Overview
 
-## Expanding the ESLint configuration
+### 🔍 TMDB API Integration
+- Real-time movie data using TMDB API.
+- Multiple categories supported: Now Playing, Popular, Top Rated, Upcoming.
+- Movies fetched in Telugu, English, and other languages with readable labels.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔁 Infinite Scrolling
+- Seamless infinite scroll implementation using React hooks.
+- Automatically loads more movies as users scroll (no pagination).
+
+### 🔎 Search Functionality
+- Search bar to find movies by title.
+- Results update in real-time with full support for dark/light theme styling.
+
+### 🎥 Movie Details Page
+- Route-based dynamic page (`/movie/:id`) using React Router.
+- Displays:
+  - Backdrop & Poster
+  - Title, Release Date, Runtime
+  - Genres, Overview
+  - Cast & Crew
+  - Production Companies
+  - Embedded YouTube Trailer (if available)
+
+### 🌟 Favorites System (Redux + LocalStorage)
+- Users can add/remove movies to their personal Favorites list.
+- Favorites persist across sessions using localStorage.
+- Favorites page includes posters, ratings, and descriptions with remove button.
+
+### 🎨 Light/Dark Theme Toggle
+- Fully functional theme toggle with:
+  - Animated icon transition (sun/moon)
+  - Default dark mode
+  - Theme-aware styles (cards, text, buttons, background)
+
+### ⚛️ Redux for State Management
+- Global state management using Redux.
+- Separate feature slices (e.g., favoritesSlice) for modularity.
+- `useSelector` and `useDispatch` used across components.
+
+### ⏳ Themed Skeleton Loaders
+- Custom skeleton UI for loading states:
+  - Backdrop
+  - Poster
+  - Title, Trailer, Cast Cards
+- Enhances perceived performance and polish.
+
+### 💡 Responsive Design with Tailwind CSS
+- Mobile-first design using utility-first classes.
+- Layouts adapt to all screen sizes with smooth transitions and hover animations.
+- Clean component styling and spacing.
+
+### 🧭 Navigation & UX Enhancements
+- React Router navigation with `useNavigate`.
+- Back buttons, detailed pages, and scroll restoration handled smoothly.
+- Interactive movie cards with hover scaling, shadows, and responsive layout.
+
+### 🧠 Clean Codebase & Project Setup
+- Project initialized using Vite for fast dev builds and hot reload.
+- Clear folder structure (components, store, routes, etc.)
+- `.gitignore` includes unnecessary folders (`node_modules`, `.vscode`, `logs`).
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React, Tailwind CSS, Redux
+- **Routing**: React Router
+- **State Management**: Redux Toolkit
+- **Data Source**: TMDB API
+- **Build Tool**: Vite
+- **Deployment**: (You can add Vercel, Netlify, etc.)
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/movie-explorer.git
+cd movie-explorer
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Add TMDB API Key
+
+Create a `.env` file in the root directory and add your TMDB API key:
+
+```
+VITE_TMDB_API_KEY=your_api_key_here
+```
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+App will be running at `http://localhost:5173`
+
+### 🧪 Optional Scripts
+
+```bash
+npm run build       # Create production build
+npm run preview     # Preview production build locally
+```
+
+## 🧾 License
+
+This project is open-source and available under the MIT License.
+
+## 🙌 Acknowledgements
+
+- TMDB API
+- React
+- Redux Toolkit
+- Tailwind CSS
+- Vite
