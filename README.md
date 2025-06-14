@@ -10,6 +10,14 @@ A fully responsive and theme-aware movie web app built with React, Redux, Tailwi
 - Multiple categories supported: Now Playing, Popular, Top Rated, Upcoming.
 - Movies fetched in Telugu, English, and other languages with readable labels.
 
+## 🌐 Proxy Server for TMDB API (ISP Bypass)
+
+Due to restrictions by some ISPs (like Jio in India) that block direct access to the TMDB API, a proxy server is used to bypass these limitations and avoid CORS issues.
+
+The frontend sends API requests to a proxy (e.g., `https://server-tmdb.vercel.app`), which then securely forwards the request to TMDB and returns the response.
+
+This ensures smooth functionality regardless of the user's ISP and helps maintain reliability in API data fetching.
+
 ### 🔁 Infinite Scrolling
 - Seamless infinite scroll implementation using React hooks.
 - Automatically loads more movies as users scroll (no pagination).
