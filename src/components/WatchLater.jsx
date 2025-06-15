@@ -67,7 +67,7 @@ const WatchLater = () => {
 
                   <button
                     onClick={() => {
-                      dispatch(remove(movie.id));
+                      dispatch(removeWatchLater(movie.id));
                       const updated = watchlater.filter((m) => m.id !== movie.id);
                       localStorage.setItem('watchLater', JSON.stringify(updated));
                     }}
