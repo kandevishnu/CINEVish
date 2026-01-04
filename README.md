@@ -134,4 +134,4 @@ This project is open-source and available under the MIT License.
 - Vite
 
 
-<!-- Testing the Git integration with frontend  -->
+<!-- Testing the Git-integration with frontend  -->
