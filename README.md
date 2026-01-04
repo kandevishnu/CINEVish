@@ -134,16 +134,4 @@ This project is open-source and available under the MIT License.
 - Vite
 
 
-<!-- Testing the Git-integration with frontend  -->
-
-<!-- Testing 1 -->
-
-<!-- Testing 2 -->
-
-<!-- Testing 3 -->
-
-<!-- Testing 4 -->
-
-<!-- Testing 5 -->
-
-<!-- Testing 6 -->
+<!-- First Git push for demo -->
