@@ -56,6 +56,7 @@ const Navbar = () => {
         </div>
       </div>
 
+
       {/* Mobile Menu */}
       {menuOpen && (
         <div className='flex flex-col gap-4 px-5 pb-4 text-center md:hidden bg-inherit'>
